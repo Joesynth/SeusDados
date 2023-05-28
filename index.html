@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!--Antes tava "en".-->
+<head>
+	<!--codificação caractere da página-->
+	<meta charset="utf-8">
+ 	<link rel="icon" href="596.png">
+	<!--SEO geral-->
+	<title id="tit"> Meus dados </title>
+	<meta name="description" content=" # .">
+ 	<link rel="canonical" href="http://www.estudio596.com"> 
+	<meta name="author" content="joe" >
+	<meta name="robots" content="index"> 
+	<!--Open Graph Facebook-->
+		
+	<!--ID FB -->
+	<meta property="fb:app_id" content="100001244831769">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="600">
+    <!--OG: Tag Obrigatórias -->
+	<meta property="og:title" content="##">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://estudio596.com/##.html">
+	<meta property="og:image" content="http://estudio596.com/images/lg_596.jpg"> 
+    <!--OG: Tag Opcionais -->
+	<meta property="og:description" content="##.">
+	<meta property="og:site_name" content="estudio596.com">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  
+  
+  <style>
+	body {background-color: lightblue;
+	} 
+	
+  </style>
+  
+
+
+	<script>
+	   var painel;
+	   function localizar (pos) {
+	     var c = pos.coords;       // c significa coodernadas
+	     painel.innerHTML += "Localização: Lat" + c.latitude + " - Lon: " + c.longitude + "<br>";
+	   }
+	   function verifica() {
+	     painel = document.getElementById("painel");
+	     painel.innerHTML = "<h3>Dados gerais:</h3> " + "<br>";
+	     painel.innerHTML += "<strong>Sistema Operacional: </strong>" + navigator.platform + "<br>";
+	     painel.innerHTML += "<strong>Cookie: </strong>" + navigator.cookieEnabled + "<br>";
+	     painel.innerHTML += "<h3>Monitor:</h3> " + "<br>";
+	     painel.innerHTML += "<strong>Largura da tela: </strong>" + screen.width + "<br>";
+	     painel.innerHTML += "<strong>Resolução de tela: </strong>" + screen.pixelDepth + "<br>";
+	     painel.innerHTML += "<h3>Navegador(browser):</h3> " + "<br>";
+	     painel.innerHTML += "<strong>Agente: </strong>" + navigator.userAgent + "<br>";
+	     painel.innerHTML += "<strong>Idioma do browser: </strong>" + navigator.language + "<br>";
+	     painel.innerHTML += "<strong>Browser onLine? </strong>" + navigator.onLine + "<br>";
+	     navigator.geolocation.getCurrentPosition(localizar);
+	
+	   }
+	   window.addEventListener("load",verifica);
+	</script>
+
+</head>
+<body>
+
+	
+		<main> <!-- Início (Não no WP) -->
+		
+
+				
+			<h1>Estes são seus próprios dados</h1>
+			
+			<div id="painel"></div>
+			<div id="painel2"></div>
+			
+			<script type="text/javascript" >
+				$(function() {
+				$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+				function(json) {
+				document.getElementById("painel2").innerHTML = "<strong>Seu IP: </strong>" + json.ip + " (externo, público)";
+				}
+				);
+				});
+			</script>
+	
+	
+	<br />
+	<br />
+	<p>\o/</p>
+	<br />
+	
+	</main> <!--Fim conteúdo -->
+
+	    </div>
+		</div>
+	</div>
+
+
+</body>
+</html>
